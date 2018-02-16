@@ -1,0 +1,37 @@
+<h1><%= notice %></h1>
+<br>
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+      
+      <h3>No completados</h3>
+          <% @todos.each do |todo|%>
+      <% if !todo.completed %>
+        <div class="jumbotron">
+           <% if todo.completed %>
+          <%='completado' %>
+          <% else %> 
+          <%='no completado' %>
+          <%end %>
+          <h1 class="display-4"><%= todo.description%></h1>  
+        
+          </div>
+          <% end %>
+        <% end %>
+    </div>
+
+     <div class="col-sm">
+      <h3>completados</h3>
+          <% @todos.each do |todo|%>
+        <div class="jumbotron">
+           <% if todo.completed %>
+          <%='completado' %>
+          <% else %> 
+          <%='no completado' %>
+          <%end %>
+          <h1 class="display-4"><%= todo.description%></h1>  
+          </div>
+          <% end %>
+    </div>   
+  </div>   
+</div>

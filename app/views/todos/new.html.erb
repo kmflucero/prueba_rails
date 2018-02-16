@@ -1,0 +1,11 @@
+<h1><%= notice %></h1>
+<h2>Creación de una nueva tarea</h2>
+<%= form_with(model: @todo, local: true) do |form|%>
+
+<%= form.label :descripcion %>
+<br><%= form.text_field :description %>
+<br><%= form.submit 'Crear Tarea'%>
+<% end %>
+
+<br><%= link_to 'Volver al Index'%>
+<h2><%= link_to 'ir a las Tareas', root_path %></h2>

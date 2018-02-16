@@ -1,0 +1,37 @@
+<h1><%= notice %></h1>
+<br>
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+      <h3>No completados</h3>
+      
+          <% @todos.each do |todo|%>
+        <div class="jumbotron">
+           <% if todo.completed %>
+          <%='completado' %>
+          <% else %> 
+          <%='no completado' %>
+          <%end %>
+          <h1 class="display-4"><%= todo.description%></h1>  
+          <p class="lead">
+            <button type="button" class="btn btn-success">
+              <%= link_to 'Finalizar tarea', complete_todo_path(todo) %> 
+            </button>
+            <button id="1"type="button" class="btn btn-warning">
+              <%= link_to 'Editar', edit_todo_path(todo) %>
+            </button>
+            <button type="button" class="btn btn-danger">
+              <%= link_to 'Eliminar', delete_todo_path(todo), method: :delete %>
+            </button></p> 
+          </div>
+          <% end %>
+    </div>  
+  </div>   
+</div>
+
+
+
+
+      
+
+  
